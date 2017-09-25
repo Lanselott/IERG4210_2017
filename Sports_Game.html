@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IERG4210 online store</title>
+    <style media="screen">
+    #header{
+      background-color: black;
+      color:white;
+      text-align: center;
+      padding:5px;
+    }
+    #nav{
+      line-height: 30px;
+      background: #eeeeee;
+      width:25%;
+      float:left;
+      padding: 5px;
+    }
+    #menu{
+      height: 45px;
+      padding: 2px;
+      background-color: burlywood;
+      width: 35%;
+      float:left;
+    }
+    #shopping-list{
+      position: absolute;
+      right:8px;
+      background-color: grey;
+      text-align: right;
+      width: auto;
+      height: 45px;
+      float:right;
+      padding: 2px;
+      z-index: 5;
+    }
+    #product{
+      width:40%;
+      float:left;
+      padding:10px;
+    }
+
+
+    </style>
+  </head>
+
+<body>
+  <!---Show LOGO Here-->
+<div id="header">
+    <h1>G fat's Steam Store</h1>
+</div>
+
+  <!--List of categories-->
+    <style>
+      ul.categories{width:40%; height:auto;
+               float:left; margin:10px; padding:10px; list-style:none;
+               overflow: auto;}
+      ul.categories li{width:100%; height:auto;
+               float: left; border:2px; solid #111}
+    .clear{clear: both;}
+    </style>
+
+<div id="nav">
+  <ul class="categories">
+    <li> <a href="FPS_Game.html">FPS Game</a></li>
+    <li> <a href="Adventure_Game.html">Adventure Game</a></li>
+    <li> <a href="Sports_Game.html">Sports Game</a></li>
+  </ul>
+</div>
+
+<div id="menu">
+  You are at:
+  <a href="Main.html">Home</a> >
+  <a href="Sports_Game.html">Sports Game</a>
+</div>
+<!--Shopping Cart -->
+<style>
+  #shopping-list ul li ul li{display: none;}
+  #shopping-list ul li:hover ul li {display: block;background-color: green;}
+</style>
+<!--Hover-->
+<div id="shopping-list">
+  <ul>
+    <li>Shopping Cart
+      <ul>
+        <li>
+          <a href="#">Buy1</a>
+          <input type="number" name="quantity" min="1" max="5">
+        </li>
+        <li>
+          <a href="#">Buy2</a>
+          <input type="number" name="quantity" min="1" max="5">
+        </li>
+        <li>
+          <a href="#">Buy3</a>
+          <input type="number" name="quantity" min="1" max="5">
+        </li>
+        <li>
+          <a href="#">
+            <button type="button" name="checkout">Checkout</button>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+  <!--List of Product-->
+<ul id="product">
+    <li>
+      <a href="product/Sports_product1.html">
+        <img src="NBA_2k18.jpg" alt="Take my money" width="33%" style="margin-top:0px">
+        <div class="product-title">
+          Name: NBA 2K18
+          Price: HK 468
+        </div>
+      </a>
+      <button type="button" name="addToCart">Buy it NOW!</button>
+    </li>
+    <li>
+      <a href="product/Sports_product2.html">
+        <img src="Football_manager_2018.jpg" alt="Take my money" width="33%" style="margin-top:0px">
+        <div class="product-title">
+          Name: Football Manager 2018
+          Price: HK 260
+        </div>
+      </a>
+      <button type="button" name="addToCart">Buy it NOW!</button>
+    </li>
+    <li>
+      <a href="product/Sports_product3.html">
+        <img src="F1_2017.jpg" alt="Take my money" width="33%" style="margin-top:0px">
+        <div class="product-title">
+          Name: F1™ 2017
+          Price: HK 310
+        </div>
+      </a>
+      <button type="button" name="addToCart">Buy it NOW!</button>
+    </li>
+</ul>
+
+</body>
+</html>
