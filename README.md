@@ -10,3 +10,5 @@ Phase 2A done, Elastic IP:52.74.49.29
 
 Answer: The elastic IP is used to advertise the data within the instance to the public internet. AWS states that the elastic IP is used for dynamic cloud computing. If an instance goes down within AWS, we want to maintain our IP adress, as well as maintain communication with our AWS account. Thus, an Elastic IP is a combination of a public IP adress and a static IP adress. It allows us to continue to advertise AWS instances within our AWS network infrastructure.
 With an Elastic IP address, we can mask the failure of an instance or software by rapidly remapping the address to another instance in our account.
+
+Phase 2B done, Merged to master
