@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+<?php
+        include_once('lib/db.inc.php');
+        ini_set('display_errors',1);
+        $db = ierg4210_DB();
+        $q = $db->prepare("SELECT * FROM categories LIMIT 100;");
+        $q->execute();
+        $cat = $q->fetchAll();
+?>
   <head>
     <meta charset="utf-8">
     <title>IERG4210 online store</title>
@@ -26,16 +34,16 @@
     }
     #shopping-list{
       position: absolute;
-      right: 8px;
+      right:8px;
       background-color: grey;
       text-align: right;
-       width: auto;
-       height: 45px;
-       float:right;
-       padding: 2px;
-       z-index: 5;
+      width: auto;
+      height: 45px;
+      float:right;
+      padding: 2px;
+      z-index: 5;
     }
-    #product-detail{
+    #welcome-homepage{
       width:40%;
       float:left;
       padding:10px;
@@ -64,16 +72,21 @@
 
 <div id="nav">
   <ul class="categories">
-    <li> <a href="../FPS_Game.html">FPS Game</a></li>
-    <li> <a href="../Adventure_Game.html">Adventure Game</a></li>
-    <li> <a href="../Sports_Game.html">Sports Game</a></li>
+        <?php for ($i = 0;$i<sizeof($cat);$i++) { ?>
+        <?php
+                echo '<li>';
+        ?>
+                <a href="categories.php?catid=<?php echo $cat[$i]['catid'];?>">
+        <?php
+                echo $cat[$i]['name'];echo '</a>';
+                echo '</li>';
+        }
+        ?>
+  </ul>
 </div>
-
 <div id="menu">
   You are at:
-  <a href="../Main.html">Home</a> >
-  <a href="../Adventure_Game.html">Adventure Game</a> >
-  <a href="Adventure_product1.html">Divinity: Original Sin 2</a> 
+  <a href="Main.php">Home</a>
 </div>
 <!--Shopping Cart -->
 <style>
@@ -106,17 +119,10 @@
     </li>
   </ul>
 </div>
-<div id="product-detail">
-  <img src="../Divinity_original_Sin_2.jpg" width="400px" height="400px" style="margin-top:0px">
-  <ul>
-    <li id="name">Game: Divinity: Original Sin 2</li>
-    <section>
-      The eagerly anticipated sequel to the award-winning RPG. Gather your party. Master deep, tactical combat.
-      Join up to 3 other players - but know that only one of you will have the chance to become a God.
-    </section>
-    <li id="price"> HK$ 260 </li>
-    <button type="button" id="addToCart">Buy it NOW!</button>
-  </ul>
+<div id="welcome-homepage">
+  Welcome to IERG 4130's Online store!
+  Website is under construction now +.+
+  <img src="G_fat.jpg" alt="G_fat_evil">
 </div>
 
 

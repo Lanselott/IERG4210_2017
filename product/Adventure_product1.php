@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html>
+<?php
+	include_once('../lib/db.inc.php');
+	$db = ierg4210_DB();
+	$q = $db->prepare("SELECT * FROM categories LIMIT 100;");
+	$q->execute();
+	$cat = $q->fetchAll();
+	//print_r($cat);
+	if (!preg_match('/^\d*$/',$_GET['pid']) || (int)$_GET['pid']==0)
+	{
+		//echo "aloha";
+		header('../Main.php');
+		exit();
+	}
+	if($_GET['pid'])
+			{
+				$q2 = $db->prepare("SELECT * FROM products WHERE pid = ?;");
+				$q2->execute(array((int)$_GET['pid']));
+				$prod = $q2->fetchAll();
+		//		print_r($prod);
+				if(!$prod) 
+				{
+					//header(..)
+					//exit();
+				}
+			}
+?>
   <head>
     <meta charset="utf-8">
     <title>IERG4210 online store</title>
@@ -64,16 +90,23 @@
 
 <div id="nav">
   <ul class="categories">
-    <li> <a href="../FPS_Game.html">FPS Game</a></li>
-    <li> <a href="../Adventure_Game.html">Adventure Game</a></li>
-    <li> <a href="../Sports_Game.html">Sports Game</a></li>
+        <?php for ($i = 0;$i<sizeof($cat);$i++) { ?>
+        <?php
+                echo '<li>';
+        ?>
+                <a href="../categories.php?catid=<?php echo $cat[$i]['catid'];?>">
+        <?php
+                echo $cat[$i]['name'];echo '</a>';
+                echo '</li>';
+        }
+        ?>
+  </ul>
 </div>
-
 <div id="menu">
   You are at:
-  <a href="../Main.html">Home</a> >
-  <a href="../Adventure_Game.html">Adventure Game</a> >
-  <a href="Adventure_product1.html">Divinity: Original Sin 2</a> 
+  <a href="../Main.php">Home >> </a> 
+  <a href="../categories.php?catid=<?php echo $prod[0]['catid'];?>"><?php echo $cat[$prod[0]['catid']-1]['name'];?>>></a>
+  <a><?php echo $prod[0]['name'];?></a> 
 </div>
 <!--Shopping Cart -->
 <style>
@@ -107,20 +140,15 @@
   </ul>
 </div>
 <div id="product-detail">
-  <img src="../Divinity_original_Sin_2.jpg" width="400px" height="400px" style="margin-top:0px">
-  <ul>
-    <li id="name">Game: Divinity: Original Sin 2</li>
-    <section>
-      The eagerly anticipated sequel to the award-winning RPG. Gather your party. Master deep, tactical combat.
-      Join up to 3 other players - but know that only one of you will have the chance to become a God.
-    </section>
-    <li id="price"> HK$ 260 </li>
-    <button type="button" id="addToCart">Buy it NOW!</button>
-  </ul>
+	<img src="../include/img/<?php echo $prod[0]['pid']?>.jpg" width="400px" height="400px"/>
+	<ul>
+		<li id="name"><?php echo $prod[0]['name'];?></li>
+		<section>
+			<?php echo $prod[0]['description']; ?>
+		</section>
+		<li id="price">HK$<?php echo $prod[0]['price'];?></li>
+	</ul>
 </div>
-
-
-
 
 </body>
 </html>
