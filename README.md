@@ -2,4 +2,4 @@
 Project for IERG4210 Web Programming and Security
 CHEN Ran SID:1155092191
 
-Phase 1 done, Online Steam Game Store~
+This is Phase 3 AJAX SHOPPING List
