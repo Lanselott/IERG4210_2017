@@ -47,6 +47,10 @@
       padding: 2px;
       z-index: 5;
     }
+    #shopping-cart{
+      position: absolute;
+      right:8px;
+    }
     #product{
       width:40%;
       float:left;
@@ -102,23 +106,13 @@
 </div>
 <!--Shopping Cart -->
 <style>
-  #shopping-list ul li ul li{display: none;}
-  #shopping-list ul li:hover ul li {display: block;background-color: green;}
+   #shopping-list li {display: none;}
+   #shopping-cart:hover ul li{display:block; background-color: green;}
 </style>
-<!--Hover-->
+<div id="shopping-cart">
 Shopping cart HK $<span id="Total">0.0</span>
-<div id="shopping-list">
- <ul>
-    <li>Shopping Cart
-      <ul>
-        <li>
-          <a href="#">
-            <button type="button" name="checkout">Checkout</button>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
+<ul id="shopping-list"></ul>
+	
 </div>
 
   <!--List of Product-->
@@ -142,7 +136,8 @@ Shopping cart HK $<span id="Total">0.0</span>
 		<div class="product-title">
 			<?php echo $prod[$i]['name']  ?>
 		</div>
-	<button type="button" name="addToCart" onclick="ui.cart.add(<?php echo $prod[$i]['pid']?>)">Buy it NOW</button>
+	<button type="button" name="addToCart" onclick="ui.cart.add(<?php echo $prod[$i]['pid']?>)">Buy it NOW :)</button>
+	<button type="button" name="removeFromCart" id="<?php echo 'remove_',htmlspecialchars($prod[$i]['pid'])?>" onclick="ui.cart.del(<?php echo $prod[$i]['pid']?>)">I don't want buy :(</button>
 	</li>
 
 <?php

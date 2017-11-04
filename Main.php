@@ -49,7 +49,10 @@
       padding:10px;
       text-align: middle;
     }
-
+    #shopping-cart{
+      position: absolute;
+      right:8px;
+    }
 
     </style>
   </head>
@@ -90,42 +93,23 @@
 </div>
 <!--Shopping Cart -->
 <style>
-  #shopping-list ul li ul li{display: none;}
-  #shopping-list ul li:hover ul li {display: block;background-color: green;}
+   #shopping-list li {display: none;}
+   #shopping-cart:hover ul li{display:block; background-color: green;}
 </style>
-<!--Hover-->
-<div id="shopping-list">
-  <ul>
-    <li>Shopping Cart
-      <ul>
-        <li>
-          <a href="#">Buy1</a>
-          <input type="number" name="quantity" min="1" max="5">
-        </li>
-        <li>
-          <a href="#">Buy2</a>
-          <input type="number" name="quantity" min="1" max="5">
-        </li>
-        <li>
-          <a href="#">Buy3</a>
-          <input type="number" name="quantity" min="1" max="5">
-        </li>
-        <li>
-          <a href="#">
-            <button type="button" name="checkout">Checkout</button>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
+<div id="shopping-cart">
+Shopping cart HK $<span id="Total">0.0</span>
+<ul id="shopping-list"></ul>
+
 </div>
+
 <div id="welcome-homepage">
   Welcome to IERG 4130's Online store!
   Website is under construction now +.+
   <img src="G_fat.jpg" alt="G_fat_evil">
 </div>
 
-
+<script type="text/javascript" src="include/myLib.js"></script>
+<script type="text/javascript" src="include/ui.js"></script>
 
 
 </body>
