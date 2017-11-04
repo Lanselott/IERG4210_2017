@@ -12,6 +12,9 @@ function updateHTML(){
 	
 		myLib.post2({action:'prod_list_fetch', list_of_pid:JSON.stringify(list)},function(json){
 	for(var i =0, prodItems = [], prod, total=0; prod = json[i]; i++){
+	//alert(Storage.getItem('item'+parseInt(prod.pid)));
+	if(Storage.getItem('item'+parseInt(prod.pid))!=0)
+	{
 		prodItems.push('<li>');
 		prodItems.push('<input type="hidden" name="item_number_',i+1,'" value="'+prod.pid+'">'+prod.name.escapeHTML());
 		prodItems.push('<input type="hidden" name="item_name_',i+1,'" value="'+prod.name.escapeHTML()+'">');
@@ -22,6 +25,8 @@ function updateHTML(){
 		prodItems.push('</li>');
 		total+=parseInt(Storage.getItem('item'+prod.pid))*parseFloat(prod.price);
 	}
+	}
+
 	document.getElementById("shopping-list").innerHTML = prodItems.join("");
 	//document.getElementById("Total").innerHTML = "<p>"+"hello";
 	e = document.getElementById("Total");
@@ -50,6 +55,10 @@ cart.add = function(pid){
 						var qty = Storage.getItem('item'+pid);
 						var new_qty=parseInt(qty)+1;
 						Storage.setItem('item'+pid, new_qty);
+						if(new_qty>0){
+                                        //              Storage.removeItem('item'+pid);
+                                                        document.getElementById("remove_"+pid).disabled=false;
+                                                }
 					}
 				}
 				else{
@@ -57,6 +66,43 @@ cart.add = function(pid){
 						Storage.setItem('item'+pid, 1);
 					}
 				
+				Storage.setItem('pidlist', JSON.stringify(list));
+				updateHTML();
+			});
+}
+
+cart.del=function(pid){
+	myLib.post2({action:'prod_fetch', pid:pid}, function(json){
+				
+				var list = Storage.getItem('pidlist');
+				if (list){
+					list = list && JSON.parse(list);
+					var exist=false;
+					for (var i=0;i<list.length;i++){
+						if (pid==list[i]){exist=true;break;}
+					}
+					if (!exist){						
+						alert("We don't find it in your shopping cart!");
+					}else{
+						var qty = Storage.getItem('item'+pid);
+						var new_qty=parseInt(qty)-1;
+					//	alert(new_qty);
+						if(new_qty<=0){
+					//		Storage.removeItem('item'+pid);
+							document.getElementById("remove_"+pid).disabled=true;
+							Storage.setItem('item'+pid,new_qty);
+						}
+						else{
+						Storage.setItem('item'+pid, new_qty);
+				//		document.getElementById("remove_"+pid).disabled=false;
+						}
+					}
+				}
+				else{
+						alert("Your shopping cart is empty!");
+						list.length=0;
+					}
+			//alert("alalalal");	
 				Storage.setItem('pidlist', JSON.stringify(list));
 				updateHTML();
 			});

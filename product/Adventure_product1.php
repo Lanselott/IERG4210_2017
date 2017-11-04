@@ -114,31 +114,6 @@
   #shopping-list ul li:hover ul li {display: block;background-color: green;}
 </style>
 <!--Hover-->
-<div id="shopping-list">
-  <ul>
-    <li>Shopping Cart
-      <ul>
-        <li>
-          <a href="#">Buy1</a>
-          <input type="number" name="quantity" min="1" max="5">
-        </li>
-        <li>
-          <a href="#">Buy2</a>
-          <input type="number" name="quantity" min="1" max="5">
-        </li>
-        <li>
-          <a href="#">Buy3</a>
-          <input type="number" name="quantity" min="1" max="5">
-        </li>
-        <li>
-          <a href="#">
-            <button type="button" name="checkout">Checkout</button>
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
 <div id="product-detail">
 	<img src="../include/img/<?php echo $prod[0]['pid']?>.jpg" width="400px" height="400px"/>
 	<ul>
