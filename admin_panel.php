@@ -1,9 +1,42 @@
 <?php
-  include_once('lib/db.inc.php');
-  ini_set('display_errors',1);
+        include_once('lib/db.inc.php');
+  	include_once('lib/csrf.php');
+	include_once('lib/auth.php');	
+	ini_set('display_errors',1);
+	$check = auth();
+	if(!$check){
+		header('Location: login.php');
+		exit();
+	}
+	//else if($check['id'] != 1)//if not admin user
+	//{
+	//	header('Location: Main.php');
+	//	exit();
+	//}
 ?>
 
 <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>IERG4210 Calvin Shop - Admin Panel</title>
+</head>
+
+<body>
+<h1>G Fat's Online Game store - Admin Panel
+<h2>Admin User: <?php echo($check['em'])?>
+<form id="logout" method="POST" action="auth-process.php?action=logout">
+     <input type="submit" value="Logout" />
+</form>
+
+<!--TODO: change password:chgPwd.php -->
+</h1>
+
+<article id="main">
+<?php
+  
+?>
+<section id="productPanel">
 <fieldset>
   <legend>New Product</legend>
   <form id="prod_insert" method="post" action="admin-process.php?action=<?php echo ($action='prod_insert');?>" enctype="multipart/form-data">
@@ -20,6 +53,7 @@
     <div>
       <input id="prod_name" type="text" name="name" required="true"
       pattern="^[\w\- ]+$"/>
+      <input type="hidden" name="nonce" value="<?php echo csrf_getNonce($action); ?>"/>
     </div>
     <label for="prod_price">Price *</label>
     <div>
@@ -39,8 +73,9 @@
 
   </form>
 </fieldset>
+</section>
 
-
+<section id="productDeletePanel">
 <fieldset>
   <legend>Delete Product</legend>
   <form id="prod_delete" action="admin-process.php?action=<?php echo ($action='prod_delete'); ?>" method="POST" enctype="application/x-www-form-urlencoded">
@@ -48,13 +83,16 @@
     <div>
       <input id="prod_name" type="text" name="name" required="true"
       pattern="^[\w\- ]+$"/>
+      <input type="hidden" name="nonce" value="<?php echo csrf_getNonce($action); ?>"/>
     </div>
 
     <input type="submit" value="Submit" />
 
   </form>
 </fieldset>
+</section>
 
+<section id="updateproductPanel">
 <fieldset>
   <legend>Update Product</legend>
   <form id="prod_update" action="admin-process.php?action=<?php echo ($action='prod_update');?>" method="POST" enctype="multipart/form-data">
@@ -71,6 +109,7 @@
     <div>
       <input id="prod_name" type="text" name="name" required="true"
       pattern="^[\w\- ]+$"/>
+      <input type="hidden" name="nonce" value="<?php echo csrf_getNonce($action); ?>"/>
     </div>
     <label for="prod_price">Price *</label>
     <div>
@@ -90,7 +129,9 @@
 
   </form>
 </fieldset>
+</section>
 
+<section id="categoryrenamePanel">
 <fieldset>
   <legend>Rename categories</legend>
   <form id="cate_rename" action="admin-process.php?action=<?php echo ($action='cate_rename');?>" method="POST" enctype="application/x-www-form-urlencoded">
@@ -98,6 +139,7 @@
     <div>
       <input id="cate_oldname" type="text" name="oldname" required="true"
       pattern="^[\w\- ]+$"/>
+      <input type="hidden" name="nonce" value="<?php echo csrf_getNonce($action); ?>"/>
     </div>
 
     <label for="cate_newname">New Name *</label>
@@ -110,7 +152,9 @@
 
   </form>
 </fieldset>
+</section>
 
+<section id="addcategoriesPanel">
 <fieldset>
   <legend>Add categories</legend>
   <form id="cate_add" action="admin-process.php?action=<?php echo ($action='cate_add');?>" method="POST"
@@ -120,14 +164,16 @@
     <div>
       <input id="cate_newname" type="text" name="name" required="true"
       pattern="^[\w\- ]+$"/>
+      <input type="hidden" name="nonce" value="<?php echo csrf_getNonce($action); ?>"/>
     </div>
 
     <input type="submit" value="Submit" />
 
   </form>
 </fieldset>
+</section>
 
-
+<section id="deleteCatPanel">
 <fieldset>
   <legend>Delete categories</legend>
   <form id="cate_delete" action="admin-process.php?action=<?php echo ($action='cate_delete');?>" method="POST"
@@ -136,12 +182,15 @@
     <div>
       <input id="cate_name" type="text" name="name" required="true"
       pattern="^[\w\- ]+$"/>
+      <input type="hidden" name="nonce" value="<?php echo csrf_getNonce($action); ?>"/>
     </div>
 
     <input type="submit" value="Submit" />
 
   </form>
 </fieldset>
+</section>
+</article>
 <?php
 function show_categories() {
          $db = ierg4210_DB();

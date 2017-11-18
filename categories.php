@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <?php
+	include_once('lib/auth.php');
+        include_once('lib/csrf.php');
 	include_once('lib/db.inc.php');
 	ini_set('display_errors',1);
 	$db = ierg4210_DB();
 	$q = $db->prepare("SELECT * FROM categories LIMIT 100;");
 	$q->execute();
 	$cat = $q->fetchAll();
+	$check = auth();
 //	if(!preg_match('/^\d*$/',$_GET['pid'])){header('Location: Main.php'); exit();}
 //	if (!preg_match('/^\d*$/', $_GET['pid'])||(int)$_GET['pid']==0)
 //		{header('Location: Main.php'); exit();}
@@ -109,6 +112,18 @@
    #shopping-list li {display: none;}
    #shopping-cart:hover ul li{display:block; background-color: green;}
 </style>
+
+<?php
+if($check){ ?>
+        <form id="logout" method="POST" action="auth-process.php?action=logout">
+        <input type="submit" value="Logout" />
+        </form>
+        <ul>Welcome! <?php echo ($check['em']); ?></ul>
+<?php }
+else{ ?>
+        <a href="login.php">login in</a>
+<?php } ?>
+
 <div id="shopping-cart">
 Shopping cart HK $<span id="Total">0.0</span>
 <ul id="shopping-list"></ul>
