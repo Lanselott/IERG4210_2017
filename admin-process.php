@@ -1,5 +1,13 @@
 <?php
+include_once('lib/csrf.phg');
+include_once('lib/auth.php');
 include_once('lib/db.inc.php');
+
+if(!auth())
+{
+	header('Location:login.php');
+	exit();
+}
 //error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors',1);
 
