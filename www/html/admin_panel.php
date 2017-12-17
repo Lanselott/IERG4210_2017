@@ -2,7 +2,7 @@
         include_once('lib/db.inc.php');
   	include_once('lib/csrf.php');
 	include_once('lib/auth.php');	
-	ini_set('display_errors',1);
+//	ini_set('display_errors',1);
 	$check = auth();
 	if(!$check){
 		header('Location: login.php');
@@ -29,7 +29,7 @@
 <form id="logout" method="POST" action="auth-process.php?action=logout">
      <input type="submit" value="Logout" />
 </form>
-
+<a href="chgpwd.php">I want change my Password</a>
 <!--TODO: change password:chgPwd.php -->
 </h1>
 

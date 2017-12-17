@@ -58,7 +58,7 @@ $fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
 		foreach($cartOrder as $car){
 			if ($car['oid']==$invoice){
 				if($car['pay']==$_POST['txn_id']){
-				     error_log("Duplicate Traction!!!");
+				     error_log("Duplicate Traction");
 					 break;
 				}
 			}
@@ -114,7 +114,7 @@ $fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
 		}else {
 			$q = $db->prepare("UPDATE orderlist SET pay = ? WHERE oid = ?");
 	        $q->execute(array("Digest Dismatch", $_POST['invoice']));
-			error_log('digest_not_match!!!');
+			error_log('digest_not_match');
 		}
 		// If 'VERIFIED', send email of IPN variables and values to specified email address 
 		foreach ($_POST as $key => $value){ 

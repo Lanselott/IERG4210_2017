@@ -4,7 +4,7 @@
 	include_once('lib/auth.php');
         include_once('lib/csrf.php');
 	include_once('lib/db.inc.php');
-	ini_set('display_errors',1);
+//	ini_set('display_errors',1);
 	$db = ierg4210_DB();
 	$q = $db->prepare("SELECT * FROM categories LIMIT 100;");
 	$q->execute();

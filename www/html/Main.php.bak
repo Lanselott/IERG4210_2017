@@ -97,7 +97,6 @@
         }
         ?>
   </ul>
-<div class="fb-page" data-href="https://www.facebook.com/CUHKofficial/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/CUHKofficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CUHKofficial/">The Chinese University of Hong Kong 香港中文大學 - CUHK</a></blockquote></div>
 </div>
 <div id="menu">
   You are at:
@@ -137,24 +136,77 @@ if($check){?>
 		<input type="submit" value="Checkout" />
 	</form>
 <?php } ?>
+<ul id="shopping-list"></ul>
 </div>
 
 <div id="welcome-homepage">
   Welcome to IERG 4210's Online store!
   Website is under construction now +.+
+ 
   <img src="G_fat.jpg" alt="G_fat_evil">
 </div>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v2.11';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script type="text/javascript" src="include/myLib.js"></script>
-<script type="text/javascript" src="include/ui.js"></script>
+<script>
 
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    if (response.status === 'connected') {
+      testAPI();
+      //var email = response.authRresponse.userID;
+      console.log(response.email);
+
+    } else if (response.status === 'not_authorized') {
+      FB.login(function(response) {
+        statusChangeCallback2(response);
+      }, {scope: 'public_profile,email'});
+
+    } else {
+      alert("Testing on Facebook log in");
+    }
+  }
+
+  function statusChangeCallback2(response) {
+    console.log('statusChangeCallback2');
+    console.log(response);
+    if (response.status === 'connected') {
+      testAPI();
+      var email = response.authRresponse.userID;
+      alert(email);
+
+    } else if (response.status === 'not_authorized') {
+      console.log('still not authorized!');
+
+    } else {
+      alert("not connected, not logged into facebook, we don't know");
+    }
+  }
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name + response.id);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
+  $(document).ready(function() {
+    FB.init({
+      appId      : '172520823341490',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+    checkLoginState();
+  });
+</script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',1);
+//ini_set('display_errors',1);
 session_start();
 //handle account session and cookie
 function newDB(){

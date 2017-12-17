@@ -2211,3 +2211,501 @@ payment_gross =
 ipn_track_id = f128424e535f9
 
 \n\ncmd=_notify-validate&mc_gross=520.00&invoice=39&protection_eligibility=Eligible&address_status=confirmed&item_number1=4&payer_id=VA2WTXUWRG39N&address_street=71566176+Sky+E137+S&payment_date=08%3A32%3A16+Dec+01%2C+2017+PST&payment_status=Completed&charset=Big5&address_zip=W185744&first_name=test&mc_fee=20.03&address_country_code=HK&address_name=buyer+test&notify_version=3.8&custom=6ac11a3a69c22dafa512d55ad7e02a5c41eaa316&payer_status=verified&business=497653881-facilitator%40qq.com&address_country=Hong+Kong&num_cart_items=1&address_city=Posta&verify_sign=AevBCJpNUBVvP6zR.tYwM0aKSoyXARHdPycvLvw4Xh485g2DK6ujnFxI&payer_email=497653881-buyer%40qq.com&txn_id=09025555H57732548&payment_type=instant&last_name=buyer&address_state=Libisia&item_name1=Divinity&receiver_email=497653881-facilitator%40qq.com&payment_fee=&quantity1=2&receiver_id=7B8LTC6MYMVQA&txn_type=cart&mc_gross_1=520.00&mc_currency=HKD&residence_country=HK&test_ipn=1&transaction_subject=&payment_gross=&ipn_track_id=f128424e535f9
+[06-Dec-2017 10:42:25 UTC] hey
+[06-Dec-2017 10:42:25 UTC] Array
+(
+    [mc_gross] => 2007.00
+    [invoice] => 40
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [item_number1] => 1
+    [item_number2] => 4
+    [payer_id] => VA2WTXUWRG39N
+    [item_number3] => 5
+    [address_street] => 71566176 Sky E137 S
+    [item_number4] => 6
+    [payment_date] => 02:42:15 Dec 06, 2017 PST
+    [item_number5] => 10
+    [payment_status] => Completed
+    [charset] => Big5
+    [address_zip] => W185744
+    [first_name] => test
+    [mc_fee] => 70.59
+    [address_country_code] => HK
+    [address_name] => buyer test
+    [notify_version] => 3.8
+    [custom] => be2fbefcb37c6441acdb6bb3f25afcb4c957536b
+    [payer_status] => verified
+    [business] => 497653881-facilitator@qq.com
+    [address_country] => Hong Kong
+    [num_cart_items] => 5
+    [address_city] => Posta
+    [verify_sign] => AI36sk2Aln3iC.t.mla1wMizPRcQAkWuRRROKxS0SxTlreN9S2YSSeKI
+    [payer_email] => 497653881-buyer@qq.com
+    [txn_id] => 19L15215HS848074X
+    [payment_type] => instant
+    [last_name] => buyer
+    [address_state] => Libisia
+    [item_name1] => PUBG
+    [receiver_email] => 497653881-facilitator@qq.com
+    [item_name2] => Divinity
+    [payment_fee] => 
+    [item_name3] => Nier
+    [item_name4] => Witcher
+    [item_name5] => test
+    [quantity1] => 2
+    [quantity2] => 2
+    [receiver_id] => 7B8LTC6MYMVQA
+    [quantity3] => 2
+    [txn_type] => cart
+    [quantity4] => 1
+    [quantity5] => 2
+    [mc_gross_1] => 376.00
+    [mc_currency] => HKD
+    [mc_gross_2] => 520.00
+    [mc_gross_3] => 556.00
+    [residence_country] => HK
+    [test_ipn] => 1
+    [mc_gross_4] => 309.00
+    [mc_gross_5] => 246.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [ipn_track_id] => ffafedc9a8634
+)
+
+[06-Dec-2017 10:42:27 UTC] Completed
+[06-Dec-2017 10:42:27 UTC] test invoice: 40
+[06-Dec-2017 10:42:27 UTC] correct email
+[06-Dec-2017 10:42:27 UTC] salt:468985365132534459
+[06-Dec-2017 10:42:27 UTC] the i=1
+[06-Dec-2017 10:42:27 UTC] prod pid=1 its qty=2 its $=376
+[06-Dec-2017 10:42:27 UTC] the i=2
+[06-Dec-2017 10:42:27 UTC] prod pid=4 its qty=2 its $=520
+[06-Dec-2017 10:42:27 UTC] the i=3
+[06-Dec-2017 10:42:27 UTC] prod pid=5 its qty=2 its $=556
+[06-Dec-2017 10:42:27 UTC] the i=4
+[06-Dec-2017 10:42:27 UTC] prod pid=6 its qty=1 its $=309
+[06-Dec-2017 10:42:27 UTC] the i=5
+[06-Dec-2017 10:42:27 UTC] prod pid=10 its qty=2 its $=246
+[06-Dec-2017 10:42:27 UTC] list_combine:1,2,4,2,5,2,6,1,10,2 pids=1,4,5,6,10 qtys=2,2,2,1,2 price=376,520,556,309,246
+[06-Dec-2017 10:42:27 UTC] priceStr=376,520,556,309,246 ttprice=2007
+[06-Dec-2017 10:42:27 UTC] traction ID:19L15215HS848074X
+[06-Dec-2017 10:42:27 UTC] 497653881-facilitator@qq.comLive-VERIFIED IPNmc_gross = 2007.00
+
+invoice = 40
+
+protection_eligibility = Eligible
+
+address_status = confirmed
+
+item_number1 = 1
+
+item_number2 = 4
+
+payer_id = VA2WTXUWRG39N
+
+item_number3 = 5
+
+address_street = 71566176 Sky E137 S
+
+item_number4 = 6
+
+payment_date = 02:42:15 Dec 06, 2017 PST
+
+item_number5 = 10
+
+payment_status = Completed
+
+charset = Big5
+
+address_zip = W185744
+
+first_name = test
+
+mc_fee = 70.59
+
+address_country_code = HK
+
+address_name = buyer test
+
+notify_version = 3.8
+
+custom = be2fbefcb37c6441acdb6bb3f25afcb4c957536b
+
+payer_status = verified
+
+business = 497653881-facilitator@qq.com
+
+address_country = Hong Kong
+
+num_cart_items = 5
+
+address_city = Posta
+
+verify_sign = AI36sk2Aln3iC.t.mla1wMizPRcQAkWuRRROKxS0SxTlreN9S2YSSeKI
+
+payer_email = 497653881-buyer@qq.com
+
+txn_id = 19L15215HS848074X
+
+payment_type = instant
+
+last_name = buyer
+
+address_state = Libisia
+
+item_name1 = PUBG
+
+receiver_email = 497653881-facilitator@qq.com
+
+item_name2 = Divinity
+
+payment_fee = 
+
+item_name3 = Nier
+
+item_name4 = Witcher
+
+item_name5 = test
+
+quantity1 = 2
+
+quantity2 = 2
+
+receiver_id = 7B8LTC6MYMVQA
+
+quantity3 = 2
+
+txn_type = cart
+
+quantity4 = 1
+
+quantity5 = 2
+
+mc_gross_1 = 376.00
+
+mc_currency = HKD
+
+mc_gross_2 = 520.00
+
+mc_gross_3 = 556.00
+
+residence_country = HK
+
+test_ipn = 1
+
+mc_gross_4 = 309.00
+
+mc_gross_5 = 246.00
+
+transaction_subject = 
+
+payment_gross = 
+
+ipn_track_id = ffafedc9a8634
+
+\n\ncmd=_notify-validate&mc_gross=2007.00&invoice=40&protection_eligibility=Eligible&address_status=confirmed&item_number1=1&item_number2=4&payer_id=VA2WTXUWRG39N&item_number3=5&address_street=71566176+Sky+E137+S&item_number4=6&payment_date=02%3A42%3A15+Dec+06%2C+2017+PST&item_number5=10&payment_status=Completed&charset=Big5&address_zip=W185744&first_name=test&mc_fee=70.59&address_country_code=HK&address_name=buyer+test&notify_version=3.8&custom=be2fbefcb37c6441acdb6bb3f25afcb4c957536b&payer_status=verified&business=497653881-facilitator%40qq.com&address_country=Hong+Kong&num_cart_items=5&address_city=Posta&verify_sign=AI36sk2Aln3iC.t.mla1wMizPRcQAkWuRRROKxS0SxTlreN9S2YSSeKI&payer_email=497653881-buyer%40qq.com&txn_id=19L15215HS848074X&payment_type=instant&last_name=buyer&address_state=Libisia&item_name1=PUBG&receiver_email=497653881-facilitator%40qq.com&item_name2=Divinity&payment_fee=&item_name3=Nier&item_name4=Witcher&item_name5=test&quantity1=2&quantity2=2&receiver_id=7B8LTC6MYMVQA&quantity3=2&txn_type=cart&quantity4=1&quantity5=2&mc_gross_1=376.00&mc_currency=HKD&mc_gross_2=520.00&mc_gross_3=556.00&residence_country=HK&test_ipn=1&mc_gross_4=309.00&mc_gross_5=246.00&transaction_subject=&payment_gross=&ipn_track_id=ffafedc9a8634
+[11-Dec-2017 13:55:34 UTC] hey
+[11-Dec-2017 13:55:34 UTC] Array
+(
+    [mc_gross] => 386.00
+    [invoice] => 103
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [item_number1] => 1
+    [item_number2] => 2
+    [payer_id] => VA2WTXUWRG39N
+    [address_street] => 71566176 Sky E137 S
+    [payment_date] => 05:55:20 Dec 11, 2017 PST
+    [payment_status] => Completed
+    [charset] => Big5
+    [address_zip] => W185744
+    [first_name] => test
+    [mc_fee] => 15.47
+    [address_country_code] => HK
+    [address_name] => buyer test
+    [notify_version] => 3.8
+    [custom] => 4bd5b2235736e5c00dd4c47ad4013828da6824e1
+    [payer_status] => verified
+    [business] => 497653881-facilitator@qq.com
+    [address_country] => Hong Kong
+    [num_cart_items] => 2
+    [address_city] => Posta
+    [verify_sign] => A7LWorWrJcRjmmYMyZ3UG3TC-LgOAnHwO6166CnFPw3H3kmpbYspbF2v
+    [payer_email] => 497653881-buyer@qq.com
+    [txn_id] => 51028852ME3483430
+    [payment_type] => instant
+    [last_name] => buyer
+    [address_state] => Libisia
+    [item_name1] => PUBG
+    [receiver_email] => 497653881-facilitator@qq.com
+    [item_name2] => CSGO
+    [payment_fee] => 
+    [quantity1] => 1
+    [quantity2] => 2
+    [receiver_id] => 7B8LTC6MYMVQA
+    [txn_type] => cart
+    [mc_gross_1] => 188.00
+    [mc_currency] => HKD
+    [mc_gross_2] => 198.00
+    [residence_country] => HK
+    [test_ipn] => 1
+    [transaction_subject] => 
+    [payment_gross] => 
+    [ipn_track_id] => 5d23323d8414
+)
+
+[11-Dec-2017 13:55:35 UTC] Completed
+[11-Dec-2017 13:55:35 UTC] test invoice: 103
+[11-Dec-2017 13:55:35 UTC] correct email
+[11-Dec-2017 13:55:35 UTC] salt:9357282562057155209
+[11-Dec-2017 13:55:35 UTC] the i=1
+[11-Dec-2017 13:55:35 UTC] prod pid=1 its qty=1 its $=188
+[11-Dec-2017 13:55:35 UTC] the i=2
+[11-Dec-2017 13:55:35 UTC] prod pid=2 its qty=2 its $=198
+[11-Dec-2017 13:55:35 UTC] list_combine:1,1,2,2 pids=1,2 qtys=1,2 price=188,198
+[11-Dec-2017 13:55:35 UTC] priceStr=188,198 ttprice=386
+[11-Dec-2017 13:55:35 UTC] traction ID:51028852ME3483430
+[11-Dec-2017 13:55:35 UTC] 497653881-facilitator@qq.comLive-VERIFIED IPNmc_gross = 386.00
+
+invoice = 103
+
+protection_eligibility = Eligible
+
+address_status = confirmed
+
+item_number1 = 1
+
+item_number2 = 2
+
+payer_id = VA2WTXUWRG39N
+
+address_street = 71566176 Sky E137 S
+
+payment_date = 05:55:20 Dec 11, 2017 PST
+
+payment_status = Completed
+
+charset = Big5
+
+address_zip = W185744
+
+first_name = test
+
+mc_fee = 15.47
+
+address_country_code = HK
+
+address_name = buyer test
+
+notify_version = 3.8
+
+custom = 4bd5b2235736e5c00dd4c47ad4013828da6824e1
+
+payer_status = verified
+
+business = 497653881-facilitator@qq.com
+
+address_country = Hong Kong
+
+num_cart_items = 2
+
+address_city = Posta
+
+verify_sign = A7LWorWrJcRjmmYMyZ3UG3TC-LgOAnHwO6166CnFPw3H3kmpbYspbF2v
+
+payer_email = 497653881-buyer@qq.com
+
+txn_id = 51028852ME3483430
+
+payment_type = instant
+
+last_name = buyer
+
+address_state = Libisia
+
+item_name1 = PUBG
+
+receiver_email = 497653881-facilitator@qq.com
+
+item_name2 = CSGO
+
+payment_fee = 
+
+quantity1 = 1
+
+quantity2 = 2
+
+receiver_id = 7B8LTC6MYMVQA
+
+txn_type = cart
+
+mc_gross_1 = 188.00
+
+mc_currency = HKD
+
+mc_gross_2 = 198.00
+
+residence_country = HK
+
+test_ipn = 1
+
+transaction_subject = 
+
+payment_gross = 
+
+ipn_track_id = 5d23323d8414
+
+\n\ncmd=_notify-validate&mc_gross=386.00&invoice=103&protection_eligibility=Eligible&address_status=confirmed&item_number1=1&item_number2=2&payer_id=VA2WTXUWRG39N&address_street=71566176+Sky+E137+S&payment_date=05%3A55%3A20+Dec+11%2C+2017+PST&payment_status=Completed&charset=Big5&address_zip=W185744&first_name=test&mc_fee=15.47&address_country_code=HK&address_name=buyer+test&notify_version=3.8&custom=4bd5b2235736e5c00dd4c47ad4013828da6824e1&payer_status=verified&business=497653881-facilitator%40qq.com&address_country=Hong+Kong&num_cart_items=2&address_city=Posta&verify_sign=A7LWorWrJcRjmmYMyZ3UG3TC-LgOAnHwO6166CnFPw3H3kmpbYspbF2v&payer_email=497653881-buyer%40qq.com&txn_id=51028852ME3483430&payment_type=instant&last_name=buyer&address_state=Libisia&item_name1=PUBG&receiver_email=497653881-facilitator%40qq.com&item_name2=CSGO&payment_fee=&quantity1=1&quantity2=2&receiver_id=7B8LTC6MYMVQA&txn_type=cart&mc_gross_1=188.00&mc_currency=HKD&mc_gross_2=198.00&residence_country=HK&test_ipn=1&transaction_subject=&payment_gross=&ipn_track_id=5d23323d8414
+[12-Dec-2017 07:11:01 UTC] hey
+[12-Dec-2017 07:11:01 UTC] Array
+(
+    [mc_gross] => 475.00
+    [invoice] => 126
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [item_number1] => 1
+    [item_number2] => 2
+    [payer_id] => VA2WTXUWRG39N
+    [address_street] => 71566176 Sky E137 S
+    [payment_date] => 23:10:51 Dec 11, 2017 PST
+    [payment_status] => Completed
+    [charset] => Big5
+    [address_zip] => W185744
+    [first_name] => test
+    [mc_fee] => 18.50
+    [address_country_code] => HK
+    [address_name] => buyer test
+    [notify_version] => 3.8
+    [custom] => 9a94c9d2cf91d8b6f8b5e97d327b2bc2285a8dc7
+    [payer_status] => verified
+    [business] => 497653881-facilitator@qq.com
+    [address_country] => Hong Kong
+    [num_cart_items] => 2
+    [address_city] => Posta
+    [verify_sign] => AWupihapJ55v4E8OFm29kEztHiEDADHG-vC27mCvIdkuHRXJ1Hi7prYN
+    [payer_email] => 497653881-buyer@qq.com
+    [txn_id] => 12T84512DP236012U
+    [payment_type] => instant
+    [last_name] => buyer
+    [address_state] => Libisia
+    [item_name1] => PUBG
+    [receiver_email] => 497653881-facilitator@qq.com
+    [item_name2] => CSGO
+    [payment_fee] => 
+    [quantity1] => 2
+    [quantity2] => 1
+    [receiver_id] => 7B8LTC6MYMVQA
+    [txn_type] => cart
+    [mc_gross_1] => 376.00
+    [mc_currency] => HKD
+    [mc_gross_2] => 99.00
+    [residence_country] => HK
+    [test_ipn] => 1
+    [transaction_subject] => 
+    [payment_gross] => 
+    [ipn_track_id] => 6210c5613abd7
+)
+
+[12-Dec-2017 07:11:02 UTC] Completed
+[12-Dec-2017 07:11:02 UTC] test invoice: 126
+[12-Dec-2017 07:11:02 UTC] correct email
+[12-Dec-2017 07:11:02 UTC] salt:1337143080970045969
+[12-Dec-2017 07:11:02 UTC] the i=1
+[12-Dec-2017 07:11:02 UTC] prod pid=1 its qty=2 its $=376
+[12-Dec-2017 07:11:02 UTC] the i=2
+[12-Dec-2017 07:11:02 UTC] prod pid=2 its qty=1 its $=99
+[12-Dec-2017 07:11:02 UTC] list_combine:1,2,2,1 pids=1,2 qtys=2,1 price=376,99
+[12-Dec-2017 07:11:02 UTC] priceStr=376,99 ttprice=475
+[12-Dec-2017 07:11:02 UTC] traction ID:12T84512DP236012U
+[12-Dec-2017 07:11:02 UTC] 497653881-facilitator@qq.comLive-VERIFIED IPNmc_gross = 475.00
+
+invoice = 126
+
+protection_eligibility = Ineligible
+
+address_status = confirmed
+
+item_number1 = 1
+
+item_number2 = 2
+
+payer_id = VA2WTXUWRG39N
+
+address_street = 71566176 Sky E137 S
+
+payment_date = 23:10:51 Dec 11, 2017 PST
+
+payment_status = Completed
+
+charset = Big5
+
+address_zip = W185744
+
+first_name = test
+
+mc_fee = 18.50
+
+address_country_code = HK
+
+address_name = buyer test
+
+notify_version = 3.8
+
+custom = 9a94c9d2cf91d8b6f8b5e97d327b2bc2285a8dc7
+
+payer_status = verified
+
+business = 497653881-facilitator@qq.com
+
+address_country = Hong Kong
+
+num_cart_items = 2
+
+address_city = Posta
+
+verify_sign = AWupihapJ55v4E8OFm29kEztHiEDADHG-vC27mCvIdkuHRXJ1Hi7prYN
+
+payer_email = 497653881-buyer@qq.com
+
+txn_id = 12T84512DP236012U
+
+payment_type = instant
+
+last_name = buyer
+
+address_state = Libisia
+
+item_name1 = PUBG
+
+receiver_email = 497653881-facilitator@qq.com
+
+item_name2 = CSGO
+
+payment_fee = 
+
+quantity1 = 2
+
+quantity2 = 1
+
+receiver_id = 7B8LTC6MYMVQA
+
+txn_type = cart
+
+mc_gross_1 = 376.00
+
+mc_currency = HKD
+
+mc_gross_2 = 99.00
+
+residence_country = HK
+
+test_ipn = 1
+
+transaction_subject = 
+
+payment_gross = 
+
+ipn_track_id = 6210c5613abd7
+
+\n\ncmd=_notify-validate&mc_gross=475.00&invoice=126&protection_eligibility=Ineligible&address_status=confirmed&item_number1=1&item_number2=2&payer_id=VA2WTXUWRG39N&address_street=71566176+Sky+E137+S&payment_date=23%3A10%3A51+Dec+11%2C+2017+PST&payment_status=Completed&charset=Big5&address_zip=W185744&first_name=test&mc_fee=18.50&address_country_code=HK&address_name=buyer+test&notify_version=3.8&custom=9a94c9d2cf91d8b6f8b5e97d327b2bc2285a8dc7&payer_status=verified&business=497653881-facilitator%40qq.com&address_country=Hong+Kong&num_cart_items=2&address_city=Posta&verify_sign=AWupihapJ55v4E8OFm29kEztHiEDADHG-vC27mCvIdkuHRXJ1Hi7prYN&payer_email=497653881-buyer%40qq.com&txn_id=12T84512DP236012U&payment_type=instant&last_name=buyer&address_state=Libisia&item_name1=PUBG&receiver_email=497653881-facilitator%40qq.com&item_name2=CSGO&payment_fee=&quantity1=2&quantity2=1&receiver_id=7B8LTC6MYMVQA&txn_type=cart&mc_gross_1=376.00&mc_currency=HKD&mc_gross_2=99.00&residence_country=HK&test_ipn=1&transaction_subject=&payment_gross=&ipn_track_id=6210c5613abd7

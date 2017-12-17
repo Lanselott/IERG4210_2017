@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',1);
+//ini_set('display_errors',1);
 include_once('lib/auth.php');
 $db1=newDB();
 //$saltedPassword=sha1($salt."951207Chen"); 
@@ -9,11 +9,11 @@ $q->bindParam(2,$email);
 $q->bindParam(3,$salt);
 $q->bindParam(4,$saltedPassword);
 
-$userid=3;
-$email="JiangZeMin@haha.xym";
+$userid=7;
+$email="linxi@excited.com";
 $salt=mt_rand();
-$password="Excited2017";//id1:951207Chen,id2:951207Alex,id3:Excited2017
-$saltedPassword=sha1($salt."Excited2017");
+$password="LX2017excited";//id1:951207Chen,id2:951207Alex,id3:Excited2017
+$saltedPassword=sha1($salt."LX2017excited");
 
 if($q->execute()){echo "success!";}
 else {echo "shit!";}
