@@ -19,3 +19,4 @@ Done: 2.Mashup
 	  8.Supporting Change of Password
 	  15.Supporting secire password reset through email
 	  
+REMIND: Master is the final version of the Project (12/17)
